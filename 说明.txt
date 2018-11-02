@@ -1,0 +1,20 @@
+可换成自己的网址
+KVM
+https://www.zhulou.net/post/157.html
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+
+锐速https://www.wn789.com/4678.html
+
+yum -y install wget
+wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh && bash serverspeeder.sh
+
+
+OPENVZ
+
+https://www.zhulou.net/post/157.html
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+
+BBR
+https://www.moerats.com/archives/398/
+wget https://github.com/tcp-nanqinlang/lkl-haproxy/releases/download/1.1.1/tcp_nanqinlang-haproxy-centos.sh
+bash tcp_nanqinlang-haproxy-centos.sh
