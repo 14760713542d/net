@@ -1,0 +1,83 @@
+V2RaySSR综合网
+
+
+VPS各类安装脚本
+
+V2Ray基于Nginx的一键安装脚本，V2ray+Ws+TLs+Nginx、V2ray+H2+TLs+Nginx（H2/WS二合一选装脚本）
+
+6月前0108.4k
+
+￼
+
+V2raySSR综合网V2raySSR综合网
+
+关注 私信
+
+文章导读目录
+
+前言2019-12-30更新如下注意事项准备工作准备好你的域名安装好 curl、wget安装/更新方式（h2 和 ws 版本已合并）启动方式相关目录
+
+前言
+
+其实一键安装脚本安装毫无技术而言。开源的脚本，不存在什么后门。那些说有后面的人就别安装了。（开源的，人家弄个后门，没有这样的。。。。。）
+
+￼
+
+在此感谢 wulabing_v2ray
+
+GitHub 项目地址：点击访问
+
+YouTube视频观看地址：点击访问
+
+￼
+
+2019-12-30更新如下
+
+本次更新内容较多，并存在部分代码重构及合并，请留意，建议用户使用新版管理脚本时 先执行卸载后 重新安装对应版本
+
+新增 交互式菜单，重构为安装管理脚本，版本号初始化为1.0，诸多功能合并合并 h2 版合并至主版本并跟随更新，h2版（旧版）停止维护新增 变更UUID ALTERID PORT TLS 版本选项新增 V2ray 日志记录及查看新增 4合1 bbr锐速脚本引入，感谢 94ish.me新增 卸载选项新增 证书手动更新，原理与计划任务更新相同，证书有效期仅小于30天可更新，默认不启用强制更新
+
+注意事项
+
+推荐在纯净环境下使用本脚本，如果你是新手，请不要使用Centos系统。
+
+在尝试本脚本确实可用之前，请不要将本程序应用于生产环境中。
+
+该程序依赖 Nginx 实现相关功能，请使用 LNMP 或其他类似携带 Nginx 脚本安装过 Nginx 的用户特别留意，使用本脚本可能会导致无法预知的错误（未测试，若存在，后续版本可能会处理本问题）。
+
+V2Ray 的部分功能依赖于系统时间，请确保您使用V2RAY程序的系统 UTC 时间误差在三分钟之内，时区无关。
+
+本 bash 依赖于 V2ray 官方安装脚本 及 acme.sh 工作。
+
+Centos 系统用户请预先在防火墙中放行程序相关端口（默认：80，443）
+
+准备工作
+
+准备好你的域名
+
+申请地址：https://freenom.com （若你是申请不了免费的，那么请移步下面）
+
+收费申请地址：https://www.namesilo.com   (随便申请一个年付 0.99/美元的域名，支付宝支付)
+
+解析好你的域名（指向 VPS IP），波仔推荐你使用二级域名（XXX.XXX.XXX）
+
+若不懂二级域名为何物，请移步视频区：点击观看
+
+安装好 curl、wget
+
+yum -y install wget ##ContOS Yum安装wgetapt-get install wget ##Debian Ubuntu安装 wgetapt-get update -y && apt-get install curl -y ##Ubuntu/Debian 系统安装 Curl 方法yum update -y && yum install curl -y ##Centos 系统安装 Curl 方法
+
+安装/更新方式（h2 和 ws 版本已合并）
+
+Vmess+websocket+TLS+Nginx+Website
+
+wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh" && chmod +x install.sh && bash install.sh
+
+启动方式
+
+systemctl start v2ray #启动 V2ray systemctl stop v2ray #停止 V2ray systemctl start nginx #启动 Nginx systemctl stop nginx #停止 Nginx 
+
+相关目录
+
+伪装的 Web 目录：/home/wwwroot/3DCEListV2ray 服务端配置：/etc/v2ray/config.jsonNginx 目录： /etc/nginx证书文件: /data/v2ray.key 和 /data/v2ray.crt
+
